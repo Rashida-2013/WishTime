@@ -1,0 +1,21 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+dist/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Google credentials
+token.json
+credentials.json
+client_secret.json
+
+# IDE
+.vscode/

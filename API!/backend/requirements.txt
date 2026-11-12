@@ -1,0 +1,18 @@
+# google: ambiguous - could be grpc-google-iam-v1, google-resumable-media, google-cloud-appengine-logging, google-cloud-bigquery-storage, google-cloud-audit-log, google-cloud-core, googleapis-common-protos, google-cloud-secret-manager, google-cloud-spanner, google-api-core
+apscheduler==3.11.3
+
+fastapi==0.142.2
+uvicorn[standard]==0.54.0
+
+pydantic[email]==2.13.5
+pydantic-settings==2.15.0
+
+python-dotenv==1.2.4
+sqlalchemy==2.1.2
+requests==2.34.2
+
+google-api-python-client==2.201.0
+google-auth==2.41.0
+google-auth-oauthlib==1.5.0
+google-auth-httplib2==0.2.0
+itsdangerous==2.2.0

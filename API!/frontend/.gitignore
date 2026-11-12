@@ -1,0 +1,22 @@
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Node modules
+node_modules/
+dist/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Credentials
+token.json
+credentials.json
+client_secret.json
+
+# IDE
+.vscode/

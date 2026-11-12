@@ -1,0 +1,53 @@
+WISHTIME - RUN INSTRUCTIONS
+===========================
+
+1. Backend
+-----------
+Open Command Prompt in: API!\backend
+
+   #run commands 
+ cd backend
+>> python -m venv .venv                                               
+>> .\.venv\Scripts\Activate.ps1
+>> python.exe -m pip install --upgrade pip                                                
+>> python.exe -m pip install -r requirements.txt
+>> $env:OAUTHLIB_INSECURE_TRANSPORT="1"
+ >> python -m uvicorn main:app --reload
+ # cd frontend 
+ npm install
+ npm run dev
+
+Open http://localhost:8000/ and http://localhost:8000/docs
+
+2. Frontend
+------------
+Open a second Command Prompt in: API!\frontend
+
+    npm install
+    npm run dev
+
+Open http://localhost:5173
+
+3. Registration/Login fix
+-------------------------
+The original project had frontend calls to /auth/register and /auth/login,
+but the backend did not implement those endpoints. This version adds both.
+Passwords are stored as PBKDF2-HMAC-SHA256 hashes, not plain text.
+
+4. Existing database
+--------------------
+The backend automatically adds the password_hash column to an existing SQLite
+users table on startup. Existing birthday/event data is preserved.
+
+5. Google Login
+---------------
+Normal email/password registration and login work without Google credentials.
+To enable Google Login, fill GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET in
+backend/.env and make sure the redirect URI is registered in Google Cloud:
+http://localhost:8000/auth/google/callback
+
+6. Frontend/backend ports
+-------------------------
+Frontend: http://localhost:5173
+Backend:  http://localhost:8000
+The backend FRONTEND_URL is already set to http://localhost:5173.
